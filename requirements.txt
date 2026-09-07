@@ -1,0 +1,14 @@
+Flask
+python-dotenv
+
+langchain
+langchain-community
+langchain-groq
+langchain-huggingface
+
+faiss-cpu
+sentence-transformers
+
+PyPDF2
+scikit-learn
+pypdf

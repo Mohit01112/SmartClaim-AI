@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Insurance Claim Result</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white min-h-screen flex flex-col justify-between">
+<div class="relative isolate">
+<header class="absolute inset-x-0 top-0 z-50">
+<nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+<div class="flex lg:flex-1">
+<a class="-m-1.5 p-1.5 flex items-center space-x-3" href="#">
+<img alt="Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7-Wl_ffiYiGbmiLXs1KMJ4otTz6EQEaCedohfIqxqoTYYlQSb4azsPJXlH7ExKCvq2H3DnZR-tGjldfHaRQ_dI4Mowr5VXfq1FB5sqRAGD30nztNPAT0Gk1I8EI-LnAcxdYJFplCcd_lRgyQuq4eE14MQAIKJ2Q2gUP-VyGqXqrP3uBfwGGINp8MknhGhU963wYc5ukpD4kpr1-5q0xdYjk3f6bIxjznm_tynEJctZZalnY9S0MvAfmWoHnJXEX05wqJNTCHt0gjUYtw">
+<span class="text-sm font-semibold text-gray-800 font-sans tracking-tight"><span style="color: rgb(75, 85, 99); font-family: ui-serif, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-weight: 500; letter-spacing: normal;">SmartClaim AI | Insurance Claim Service</span></span>
+</a>
+</div>
+</nav>
+</header>
+<div class="relative isolate px-6 pt-24 lg:px-8">
+<div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+<div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-blue-200 to-blue-400 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+</div>
+</div>
+<div class="mx-auto max-w-2xl py-8 sm:py-12">
+<div class="mb-6 flex justify-center">
+<div class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1 text-sm font-medium text-blue-700 ring-1 ring-inset ring-blue-600/20 font-mono">
+<svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            Insurance Claim Result
+          </div>
+</div>
+<div class="bg-white rounded-2xl shadow-xl ring-1 ring-gray-900/5 p-8 border border-blue-100">
+<div class="text-center pb-6 border-b border-gray-100">
+<h2 class="text-2xl font-bold text-gray-900">Claim Summary</h2>
+<p class="mt-1 text-sm text-gray-500">Your insurance outcome details are provided below</p>
+</div>
+<div class="divide-y divide-gray-100 text-sm">
+<div class="py-3 flex justify-between items-center">
+<span class="text-gray-500">Patient Name</span>
+<span class="font-semibold text-gray-900">{{name}}</span>
+</div>
+<div class="py-3 flex justify-between items-center">
+<span class="text-gray-500">Patient Address</span>
+<span class="font-semibold text-gray-900">{{address}}</span>
+</div>
+<div class="py-3 flex justify-between items-center">
+<span class="text-gray-500">Claim Type</span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">{{claim_type}}</span>
+</div>
+<div class="py-3 flex justify-between items-center">
+<span class="text-gray-500">Claim Reason</span>
+<span class="font-semibold text-gray-900">{{claim_reason}}</span>
+</div>
+<div class="py-3 flex justify-between items-center">
+<span class="text-gray-500">Medical Facility</span>
+<span class="font-semibold text-gray-900">{{medical_facility}}</span>
+</div>
+<div class="py-3 flex justify-between items-center">
+<span class="text-gray-500">Total Claim Amount</span>
+<span class="font-bold text-blue-600 text-base">${{total_claim_amount}}</span>
+</div>
+<div class="py-3 flex justify-between items-start">
+<span class="text-gray-500">Description</span>
+<span class="font-semibold text-gray-900 text-right max-w-xs">{{description}}</span>
+</div>
+</div>
+<div class="mt-6 rounded-xl bg-blue-50/80 p-4 border border-blue-100 text-center">
+<div class="text-sm text-blue-900 font-medium">
+              {{ output | safe }}
+            </div>
+</div>
+</div>
+<div class="mt-8 flex justify-center">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" href="./">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Back to Claim Form</span>
+</a>
+</div>
+</div>
+<div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+<div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-blue-200 to-blue-400 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</body></html>
