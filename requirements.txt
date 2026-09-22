@@ -5,10 +5,13 @@ langchain
 langchain-community
 langchain-groq
 langchain-huggingface
+langchain-text-splitters
+langchain-classic
 
 faiss-cpu
 sentence-transformers
 
 PyPDF2
-scikit-learn
 pypdf
+scikit-learn
+gunicorn
